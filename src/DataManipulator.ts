@@ -33,7 +33,7 @@ export class DataManipulator {
       ratio,
       lowerBound: lb,
       upperBound: ub,
-      alert,
+      alert
     }
   }
 }
