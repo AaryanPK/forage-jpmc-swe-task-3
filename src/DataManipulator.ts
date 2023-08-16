@@ -1,3 +1,7 @@
+/**
+ * See Graph.tsx for explanation of thought process.
+ */
+
 import { ServerRespond } from './DataStreamer';
 
 //Added each of the graph's attributes.

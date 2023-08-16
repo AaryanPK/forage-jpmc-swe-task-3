@@ -1,3 +1,12 @@
+/**
+ * The task requires the ratio, and its upper and lower bounds to be shown on a graph, as well as an alert to appear whenever the ratio
+ * goes below the lower bound or above the upper bound. Since the graph is plotted with respect to time, a timestamp variable is used.
+ * The prices of both stocks are needed to calculate the ratio. The upper and lower bounds cover a threshold of within +/- 5% of the
+ * average ratio (10% as suggested did not show any alerts soon after starting the streaming since the ratio stayed within the bounds).
+ * The alert is another line that has the value of the ratio whenever the graph exceeds its bounds, and is undefined (and hence does not
+ * appear on the graph) otherwise.
+ */
+
 import React, { Component } from 'react';
 import { Table, TableData } from '@finos/perspective';
 import { ServerRespond } from './DataStreamer';
@@ -46,7 +55,7 @@ class Graph extends Component<IProps, {}> {
     if (this.table) {
       // Load the `table` in the `<perspective-viewer>` DOM reference.
 
-      //Sets up a table with time on the horizontal axis and graphs for the ratio, upper and lower bounds, and the alert.
+      //Sets up a graph with time on the horizontal axis and lines for the ratio, upper and lower bounds, and the alert.
       elem.load(this.table);
       elem.setAttribute('view', 'y_line');
       elem.setAttribute('row-pivots', '["timestamp"]');
